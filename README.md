@@ -9,11 +9,9 @@ may be in the form of text documents, images, audio clips, software programs, or
 
 > when someone ask you show me data ask back what type of data ? :p  
 
----
-
 # DATABASE
 
-Database is a tool for storing massive amounts of information that can be retrieved at a later point in time. It represents a collection of individual pieces of data stored in a highly structured and searchable way; and the most important thing is to keep your data president which means it will be always there when you need them 
+Database is a tool for storing massive amounts of information that can be retrieved at a later point in time. It represents a collection of individual pieces of data stored in a highly structured and searchable way; and the most important thing is to keep your data persistence which means it will be always there when you need them.
 
 Inside a database, we do basic actions like create, read, update, and destroy data – these operations are commonly referred to by the acronym CRUD and are essential to modern web development.
 
@@ -21,7 +19,7 @@ Databases are everywhere. They drive the mobile applications and the websites yo
 
 ## Database Types   
 * noSQL (no relational or document base database) 
-* SQL  relational database where we can represent or data on columns and rows  )
+* SQL (relational database where we can represent our data on columns and rows)
 
 ---
 
@@ -37,12 +35,12 @@ SQL stands for Structured Query Language, and it is a language universally used 
 There are many databases that understand SQL, such as MySQL, PostgreSQL, MS SQL, Oracle and SQLite. Each of these databases can be read or queried using the SQL programming language.
 
 ## Understanding of both databases and the SQL language.
- There are two important components to each data base. The information that's stored in it called data, and how the data is organized called the schema. 
+There are two important components to each data base. The information that's stored in it called data, and how the data is organized called the `schema`. 
 
- The schema establishes how that data should be stored and divided into different sections. The schema further determines how each of the sections relates to other sections. These sections are called tables.
+The schema establishes how that data should be stored and divided into different sections. The schema further determines how each of the sections relates to other sections. These sections are called tables.
 
 ```
-// CUSTOMERS
+--  CUSTOMERS schema
  id  |     name      | phone_number 
 -----+---------------+--------------
    6 | Jackie Casper | 0505555458
@@ -52,7 +50,7 @@ There are many databases that understand SQL, such as MySQL, PostgreSQL, MS SQL,
  100 | JUMANAH       | 050300078
  101 | OMAR          | 05063346
 
-// ORDERS
+--  ORDERS schema
 id | phone_numbers |     order_date      |  status   | delivery_date | quantity | total 
 ----+---------------+---------------------+-----------+---------------+----------+-------
   1 | 509940822     | 2018-12-03 04:05:06 | delivered | 2018-12-05    |       12 |      
@@ -60,7 +58,7 @@ id | phone_numbers |     order_date      |  status   | delivery_date | quantity 
   3 | 509940822     | 2018-12-03 04:05:06 | delivered | 2018-12-05    |       12 |      
   4 | 500220836     | 2018-12-05 04:05:06 | pending   | 2018-12-10    |       10 |      
 
-// INVENTORY
+--  INVENTORY schema
  id |     item     | cost | stock | unit 
 ----+--------------+------+-------+------
   1 | Grabe Leaves |   20 |    15 | JAR
@@ -88,9 +86,9 @@ You don't even have to show all columns. In fact, you can arrange the columns in
 	* TIMESTAMP
 
 ## Further Reading
-* www.sqlstyle.guide
-* PostgreSQL tutorial
-* PSQL datatypes
+* [PostgreSQL tutorial]: http://www.tutorialspoint.com/postgresql/
+* [www.sqlstyle.guide]: https://www.sqlstyle.guide/
+* [PSQL datatypes]: https://www.postgresql.org/docs/10/datatype.html
 
 ```
 \d customers
@@ -127,8 +125,6 @@ Imagine everything in this inventory table was just text. The item, cost, stock 
 > Understanding that column date types can affect how data is retrieved helps people design the schema for the database.
 
 While we're not designing the schema ourselves in this lesson, understanding data types will also help us understand how we compose the SQL queries.
-
-
 
 # PostgreSql 
 
