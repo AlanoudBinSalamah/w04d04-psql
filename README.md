@@ -86,9 +86,9 @@ You don't even have to show all columns. In fact, you can arrange the columns in
 	* TIMESTAMP
 
 ## Further Reading
-* [PostgreSQL tutorial]: http://www.tutorialspoint.com/postgresql/
-* [www.sqlstyle.guide]: https://www.sqlstyle.guide/
-* [PSQL datatypes]: https://www.postgresql.org/docs/10/datatype.html
+* [PostgreSQL tutorial](http://www.tutorialspoint.com/postgresql/)
+* [www.sqlstyle.guide](https://www.sqlstyle.guide/)
+* [PSQL datatypes](https://www.postgresql.org/docs/10/datatype.html)
 
 ```
 \d customers
@@ -164,6 +164,7 @@ While we're not designing the schema ourselves in this lesson, understanding dat
 `\dt`
 
 ## RENAME DATABASE
+
 ```
 ALTER DATABASE databasename RENAME TO newdatabasename; 
 ```
@@ -176,6 +177,7 @@ ALTER DATABASE grapeleaves RENAME TO awesome_grapeleaves;
 `DROP DATABASE grapeleaves;` 
 
 ### CREATING A TABLE
+
 ```
 CREATE TABLE table_name (
  column_name TYPE 
@@ -194,6 +196,7 @@ CREATE TABLE orders(id SERIAL, phone_number VARCHAR(10), order_date timestamp , 
 `\d customers`
 
 ## ADDING NEW ROW ( NEW DATA)
+
 ```
 INSERT INTO table_name (column1, column2, column3, ...)
 VALUES (value1, value2, value3, ...);
@@ -235,6 +238,7 @@ UPDATE customers SET phone_number='509940822' WHERE id=1;
 
 
 ## READING DATA, QUERYING
+
 ```
 SELECT column_1 FROM tablename;
 
@@ -252,29 +256,34 @@ SELECT NAME, phone_number  FROM customers;
 ```
 
 ### USING SUM 
+
 ```
 SELECT SUM(cost) from inventory ;
 ``` 
 
 ### QUERYING WITH DATE 
+
 ```
 SELECT status FROM orders where delivery_date  >  '2018-12-05'
 SELECT * from orders where delivery_date <='2018-12-05';
 ```
 
 ### USING LIKE 
+
 ```
 SELECT * FROM customers where phone_number LIKE '%6'; 
- SELECT phone_number from customers where phone_number LIKE '%458';
+SELECT phone_number from customers where phone_number LIKE '%458';
 SELECT * from customers where name LIKE '%MA%';
 ```
 
 ### USING BETWEEN 
+
 ```
 SELECT SUM(cost) FROM inventory WHERE cost >= 10 and cost <= 30;
 ```
 
 ### USING LIMIT 
+
 ```
 SELECT * FROM customers where phone_number LIKE '%6' LIMIT 1;
 ```
@@ -288,22 +297,26 @@ SELECT COUNT(*) FROM customers;
 ```
 
 ### USING ORDER 
+
 ```
 SELECT name from customers ORDER BY name ASC;
 SELECT name from customers ORDER BY name DESC;
 ```
 
 ### USING AND
+
 ```
 SELECT *  FROM orders where phone_numbers like '%9%' and status='delivered';
 ```
 
 ###  GROUP BY 
+
 ```
 SELECT  id,  SUM(cost)  FROM orders GROUP BY  id;
 ```
 
 ## DELETE
+
 ```
 DELETE FROM table_name WHERE condition;
 ```
@@ -321,20 +334,23 @@ DELETE FROM customers where phone_number='Jackie' or phone_number='custome' or  
 ```
 
 
-## OPERATION ON TABLS
+## OPERATIONS ON TABLES
 
 ### DELETE TABLE
+
 ```
 DROP TABLE  orders
 ```
 
 ### ADD NEW COLUMN 
+
 ```
 ALTER TABLE orders
 ADD COLUMN total DOUBLE PRECISION;
 ```
 
 ### EDITE COLUMN TYPE 
+
 ```
 ALTER TABLE customers ALTER COLUMN phone_number TYPE varchar(11);
 ```
